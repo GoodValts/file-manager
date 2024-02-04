@@ -9,6 +9,7 @@ import cp from './modules/basicOperations/cp.mjs';
 import mv from './modules/basicOperations/mv.mjs';
 import rm from './modules/basicOperations/rm.mjs';
 import hash from './modules/hash.mjs';
+import osFunc, { osValues } from './modules/os.mjs';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -145,6 +146,17 @@ rl.on('line', async (ctx) => {
       if (argsArr.length === 1) {
         try {
           await hash(argsArr[0]);
+        } catch (err) {
+          throwFSOperationFailed();
+        }
+      } else {
+        throwInvalidInputMessage();
+      };
+      break;
+    case 'os':
+      if (argsArr.length === 1 && osValues.some((str) => str === argsArr[0])) {
+        try {
+          await osFunc(argsArr[0]);
         } catch (err) {
           throwFSOperationFailed();
         }
