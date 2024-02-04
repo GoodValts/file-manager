@@ -4,7 +4,7 @@ import { join } from 'path';
 const add = async (__dirname, name) => {
   const file = join(__dirname, name);
 
-  console.log(file);
+  // console.log(file);
 
   try {
     await fs.promises.writeFile(file, '');

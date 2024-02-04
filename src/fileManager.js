@@ -10,6 +10,7 @@ import mv from './modules/basicOperations/mv.mjs';
 import rm from './modules/basicOperations/rm.mjs';
 import hash from './modules/hash.mjs';
 import osFunc, { osValues } from './modules/os.mjs';
+import zip from './modules/zip.mjs';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -45,9 +46,9 @@ rl.on('line', async (ctx) => {
   const command = ctx.split(' ')[0];
   const argsArr = ctx.split(' ').slice(1);
 
-  console.log(ctx);
-  console.log(command)
-  console.log(argsArr)
+  // console.log(ctx);
+  // console.log(command)
+  // console.log(argsArr)
 
   switch (command) {
     case 'up':
@@ -158,6 +159,20 @@ rl.on('line', async (ctx) => {
         try {
           await osFunc(argsArr[0]);
         } catch (err) {
+          throwFSOperationFailed();
+        }
+      } else {
+        throwInvalidInputMessage();
+      };
+      break;
+    case 'compress':
+    case 'decompress':
+      if (argsArr.length === 2) {
+        // await zip(argsArr[0], argsArr[1], command);
+        try {
+          await zip(argsArr[0], argsArr[1], command);
+        } catch (err) {
+          // console.log(err);
           throwFSOperationFailed();
         }
       } else {

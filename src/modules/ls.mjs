@@ -1,8 +1,7 @@
 import fs from 'fs';
-import { type } from 'os';
 
 const ls = async (__dirname) => {
-  console.log('__dirname=', __dirname);
+  // console.log('__dirname=', __dirname);
   const filesArr = [];
 
   try {

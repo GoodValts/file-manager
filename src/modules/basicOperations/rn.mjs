@@ -3,9 +3,9 @@ import path from 'path';
 
 const rn = async (pathToOld, newName) => {
   const pathToDir = path.dirname(pathToOld);
-  console.log('pathToDir=', pathToDir);
+  // console.log('pathToDir=', pathToDir);
   const pathToNew = path.join(pathToDir, newName)
-  console.log('pathToNew=', pathToNew);
+  // console.log('pathToNew=', pathToNew);
 
   try {
     await fs.promises.rename(pathToOld, pathToNew);
