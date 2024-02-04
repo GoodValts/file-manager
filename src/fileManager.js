@@ -2,6 +2,13 @@ import { homedir } from 'os';
 import readline from 'readline';
 import cd from './modules/cd.mjs';
 import ls from './modules/ls.mjs';
+import add from './modules/basicOperations/add.mjs';
+import cat from './modules/basicOperations/cat.mjs';
+import rn from './modules/basicOperations/rn.mjs';
+import cp from './modules/basicOperations/cp.mjs';
+import mv from './modules/basicOperations/mv.mjs';
+import rm from './modules/basicOperations/rm.mjs';
+import hash from './modules/hash.mjs';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -63,10 +70,87 @@ rl.on('line', async (ctx) => {
       break;
     case 'ls':
       try {
-        ls(__dirname);
+        await ls(__dirname);
       } catch (err) {
         throwFSOperationFailed();
       }
+      break;
+    case 'cat':
+      if (argsArr.length === 1) {
+        try {
+          await cat(argsArr[0]);
+        } catch (err) {
+          throwFSOperationFailed();
+        }
+      } else {
+        throwInvalidInputMessage();
+      };
+      break;
+    case 'add':
+      if (argsArr.length === 1) {
+        try {
+          await add(__dirname, argsArr[0]);
+        } catch (err) {
+          throwFSOperationFailed();
+        }
+      } else {
+        throwInvalidInputMessage();
+      };
+      break;
+    case 'rn':
+      if (argsArr.length === 2) {
+        try {
+          await rn(argsArr[0], argsArr[1]);
+        } catch (err) {
+          throwFSOperationFailed();
+        }
+      } else {
+        throwInvalidInputMessage();
+      };
+      break;
+    case 'cp':
+      if (argsArr.length === 2) {
+        try {
+          await cp(argsArr[0], argsArr[1]);
+        } catch (err) {
+          throwFSOperationFailed();
+        }
+      } else {
+        throwInvalidInputMessage();
+      };
+      break;
+    case 'mv':
+      if (argsArr.length === 2) {
+        try {
+          await mv(argsArr[0], argsArr[1]);
+        } catch (err) {
+          throwFSOperationFailed();
+        }
+      } else {
+        throwInvalidInputMessage();
+      };
+      break;
+    case 'rm':
+      if (argsArr.length === 1) {
+        try {
+          await rm(argsArr[0]);
+        } catch (err) {
+          throwFSOperationFailed();
+        }
+      } else {
+        throwInvalidInputMessage();
+      };
+      break;
+    case 'hash':
+      if (argsArr.length === 1) {
+        try {
+          await hash(argsArr[0]);
+        } catch (err) {
+          throwFSOperationFailed();
+        }
+      } else {
+        throwInvalidInputMessage();
+      };
       break;
     case '.exit': process.exit();
     

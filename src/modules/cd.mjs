@@ -25,7 +25,7 @@ const cd = async (__dirname, arg) => {
 
     try {
       await fs.promises.access(__dirnameTarget);
-      console.log(`\x1b[32mSwitch to ${__dirnameTarget}\x1b[31m`);
+      console.log(`\x1b[32mSwitch to ${__dirnameTarget}\x1b[37m`);
       return __dirnameTarget;
     } catch (err) {
       throw err;

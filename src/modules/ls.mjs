@@ -38,7 +38,6 @@ const ls = async (__dirname) => {
         filesArr[i].type
       );
     }
-    console.log('');
   } catch (err) {
     console.log(err);
     throw err;
