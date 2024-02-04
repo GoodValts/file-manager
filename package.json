@@ -1,0 +1,27 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "This repository is the solution for task https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/file-manager/assignment.md",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node src/fileManager.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoodValts/FileManager.git"
+  },
+  "keywords": [
+    "nodejs",
+    "file-manager",
+    "goodvalts"
+  ],
+  "author": "goodvalts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GoodValts/FileManager/issues"
+  },
+  "homepage": "https://github.com/GoodValts/FileManager#readme"
+}
