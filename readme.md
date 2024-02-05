@@ -24,11 +24,11 @@ Commands:
 - Basic operations with files:
 
 1. Type `add new_file_name` to create file in current directory. _Example command: `add list.txt`_
-1. Type `cat path_to_file` to read file content (path must be absolute, file must exist). _Example command: `cat С:\User\Users\list.txt`_
-1. Type `rn path_to_file new_filename` to rename file (path must be absolute, file must exist). _Example command: `rn С:\User\Users\list.txt log.txt`_
-1. Type `cp path_to_file path_to_new_directory` to copy file (paths must be absolute, file and directory must exist). _Example command: `cp С:\User\Users\log.txt C:\User\Users\Downloads`_
-1. Type `mv path_to_file path_to_new_directory` to move file (paths must be absolute, file and directory must exist). _Example command: `cp С:\User\Users\Downloads\log.txt C:\User\Users\`_
-1. Type `rm path_to_file` to remove file (path must be absolute, file must exist). _Example command: `rm С:\User\Users\log.txt`_
+1. Type `cat path_to_file` to read file content (path should be absolute, file should exist). _Example command: `cat С:\User\Users\list.txt`_
+1. Type `rn path_to_file new_filename` to rename file (path should be absolute, file should exist). _Example command: `rn С:\User\Users\list.txt log.txt`_
+1. Type `cp path_to_file path_to_new_directory` to copy file (paths should be absolute, file and directory should exist). _Example command: `cp С:\User\Users\log.txt C:\User\Users\Downloads`_
+1. Type `mv path_to_file path_to_new_directory` to move file (paths should be absolute, file and directory should exist). _Example command: `cp С:\User\Users\Downloads\log.txt C:\User\Users\`_
+1. Type `rm path_to_file` to remove file (path should be absolute, file should exist). _Example command: `rm С:\User\Users\log.txt`_
 
 - Info:
 
@@ -40,9 +40,9 @@ Commands:
 
 - Hash calculating:
 
-1. Type `hash path_to_file` to view file hash (path must be absolute, file must exist). _Example command: `hash С:\User\Users\log.txt`_
+1. Type `hash path_to_file` to view file hash (path should be absolute, file should exist). _Example command: `hash С:\User\Users\log.txt`_
 
 - Brotli compression:
 
-1. Type `compress path_to_file path_to_destination` to compress file (path must be absolute, file and destination directory must exist). _Example command: `compress С:\User\Users\log.txt С:\User\Users\log.br`_
-1. Type `decompress path_to_file path_to_destination` to decompress file (path must be absolute, file and destination directory must exist). _Example command: `decompress С:\User\Users\log.br С:\User\Users\log.txt`_
+1. Type `compress path_to_file path_to_destination` to compress file (path should be absolute, file and destination directory should exist). _Example command: `compress С:\User\Users\log.txt С:\User\Users\log.br`_
+1. Type `decompress path_to_file path_to_destination` to decompress file (path should be absolute, file and destination directory should exist). _Example command: `decompress С:\User\Users\log.br С:\User\Users\log.txt`_
