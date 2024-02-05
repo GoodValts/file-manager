@@ -17,7 +17,7 @@ Commands:
 
 - Navigation:
 
-1. Type `up` or `cd ..` to go upper from current directory (no upper root directory, that you can check using Info commands)
+1. Type `up` or `cd ..` to go upper from current directory (you can't move upper root directory. You can check it using Info commands below)
 1. Type `cd path_to_directory` to switch directory. Path can be relative or absolute (includes root path). _Example command: `cd downloads`_
 1. Type `ls` to get list of folders and files in current directory
 
