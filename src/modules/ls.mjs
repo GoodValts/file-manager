@@ -11,13 +11,21 @@ const ls = async (__dirname) => {
     const classifiedList = [];
 
     for (const item of list) {
-      const itemPath = `${__dirname}/${item}`;
-      const itemStats = await fs.promises.stat(itemPath);
+      try {
+        const itemPath = `${__dirname}/${item}`;
+        const itemStats = await fs.promises.stat(itemPath);
 
-      classifiedList.push({
-        name: item,
-        type: itemStats.isDirectory() ? 'folder' : 'file',
-      });
+        classifiedList.push({
+          name: item,
+          type: itemStats.isDirectory() ? 'folder' : 'file',
+        });
+      } catch (err) {
+        if (err.code === 'EBUSY') classifiedList.push({
+          name: item,
+          type: 'file',
+        })
+      }
+      
     }
 
     const folders = classifiedList.filter(el => el.type === 'folder');
