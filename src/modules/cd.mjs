@@ -6,8 +6,10 @@ const cd = async (__dirname, arg) => {
   // console.log('currDir=', __dirname);
   // console.log('arg=', arg);
 
+  const root = homedir().slice(0, homedir().indexOf('\\') + 1);
+
   if (arg === 'up' || arg === '..') {
-    if (homedir().slice(0, homedir().indexOf('\\') + 1) === __dirname) {
+    if (root === __dirname) {
       console.log('\x1b[31mYou are in the root folder yet!\x1b[37m');
       return __dirname;
     } else {
@@ -18,7 +20,7 @@ const cd = async (__dirname, arg) => {
     let __dirnameTarget = path.isAbsolute(arg) ? arg : path.join(__dirname, arg);
     // console.log('__dirnameTarget=,', __dirnameTarget);
 
-    if (!__dirnameTarget.startsWith(homedir)) {
+    if (!__dirnameTarget.startsWith(root)) {
       console.log('\x1b[31mYou can\'t reach upper the root folder!\x1b[37m');
       return __dirname;
     }
