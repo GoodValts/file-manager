@@ -7,7 +7,7 @@ const cd = async (__dirname, arg) => {
   // console.log('arg=', arg);
 
   if (arg === 'up' || arg === '..') {
-    if (homedir() === __dirname) {
+    if (homedir().slice(0, homedir().indexOf('\\') + 1) === __dirname) {
       console.log('\x1b[31mYou are in the root folder yet!\x1b[37m');
       return __dirname;
     } else {
