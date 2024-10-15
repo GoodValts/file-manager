@@ -6,8 +6,8 @@ _Like files, such is the manager..._
 
 To start the application, please make sure you have [Git](https://git-scm.com) and [Node.js](https://nodejs.org) installed on your machine. Then, follow these steps:
 
-1. Clone repository: `git clone https://github.com/GoodValts/FileManager.git`
-1. Navigate to the project directory: `cd FileManager`
+1. Clone repository: `git clone https://github.com/GoodValts/nodejs-file-manager.git`
+1. Navigate to the project directory: `cd nodejs-file-manager`
 1. Switch to 'develop' branch: `git checkout develop`
 
 ## Commands:
